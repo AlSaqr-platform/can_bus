@@ -1,0 +1,132 @@
+package:
+  name: can_bus
+  description: "CTU CAN FD is soft IP-Core written in VHDL which supports ISO and NON-ISO versions of CAN FD protocol."
+
+dependencies:
+
+sources:
+  - target: all(any(all(not(asic), not(fpga)), tech_cells_generic_include_tc_sram), not(tech_cells_generic_exclude_tc_sram))
+    files:
+      - src/can_top_ahb.vhd
+      - src/can_top_apb.vhd
+      - src/can_top_level.vhd
+
+  - target: all(any(all(not(asic), not(fpga)), tech_cells_generic_include_tc_clk), not(tech_cells_generic_exclude_tc_clk))
+    files:
+      - src/bus_sampling/bit_err_detector.vhd
+      - src/bus_sampling/bus_sampling.vhd
+      - src/bus_sampling/data_edge_detector.vhd
+      - src/bus_sampling/sample_mux.vhd
+      - src/bus_sampling/ssp_generator.vhd
+      - src/bus_sampling/trv_delay_meas.vhd
+      - src/bus_sampling/tx_data_cache.vhd
+
+  - target: all(any(fpga, tech_cells_generic_include_xilinx_xpm), not(tech_cells_generic_exclude_xilinx_xpm))
+    files:
+      - src/can_core/bit_destuffing.vhd
+      - src/can_core/bit_stuffing.vhd
+      - src/can_core/bus_traffic_counters.vhd
+      - src/can_core/can_core.vhd
+      - src/can_core/can_crc.vhd
+      - src/can_core/control_counter.vhd
+      - src/can_core/crc_calc.vhd
+      - src/can_core/err_counters.vhd
+      - src/can_core/err_detector.vhd
+      - src/can_core/fault_confinement_fsm.vhd
+      - src/can_core/fault_confinement_rules.vhd
+      - src/can_core/fault_confinement.vhd
+      - src/can_core/operation_control.vhd
+      - src/can_core/protocol_control_fsm.vhd
+      - src/can_core/protocol_control.vhd
+      - src/can_core/reintegration_counter.vhd
+      - src/can_core/retransmitt_counter.vhd
+      - src/can_core/rx_shift_reg.vhd
+      - src/can_core/trigger_mux.vhd
+      - src/can_core/tx_shift_reg.vhd
+
+  - target: all(any(not(synthesis), tech_cells_generic_include_deprecated), not(tech_cells_generic_exclude_deprecated))
+    files:
+      - src/common_blocks/clk_gate.vhd
+      - src/common_blocks/dff_arst_ce.vhd
+      - src/common_blocks/dff_arst.vhd
+      - src/common_blocks/dlc_decoder.vhd
+      - src/common_blocks/endian_swapper.vhd
+      - src/common_blocks/inf_ram_wrapper.vhd
+      - src/common_blocks/majority_decoder_3.vhd
+      - src/common_blocks/mux2.vhd
+      - src/common_blocks/rst_sync.vhd
+      - src/common_blocks/shift_reg_byte.vhd
+      - src/common_blocks/shift_reg_preload.vhd
+      - src/common_blocks/shift_reg.vhd
+      - src/common_blocks/sig_sync.vhd
+     
+  - target: all(any(not(synthesis), tech_cells_generic_include_pwr_cells), not(tech_cells_generic_exclude_pwr_cells))
+    files:
+      - src/frame_filters/bit_filter.vhd
+      - src/frame_filters/filenames.txt
+      - src/frame_filters/frame_filters.vhd
+      - src/frame_filters/range_filter.vhd
+
+  - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      - src/interface/ahb_ifc.vhd
+      - src/interface/apb_ifc.vhd
+
+  - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      - src/interrupt_manager/int_manager.vhd
+      - src/interrupt_manager/int_module.vhd
+
+  - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      -src/memory_register/generated/access_signaler.vhd
+      -src/memory_register/generated/address_decoder.vhd
+      -src/memory_register/generated/can_registers_pkg.vhd
+      -src/memory_register/generated/cmn_reg_map_pkg.vhd
+      -src/memory_register/generated/control_registers_reg_map.vhd
+      -src/memory_register/generated/data_mux.vhd
+      -src/memory_register/generated/memory_bus.vhd
+      -src/memory_register/generated/memory_reg.vhd
+      -src/memory_register/generated/test_registers_reg_map.vhd
+      -src/memory_register/memory_registers.vhd
+  
+  - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      - src/packages/acan_config_pkg.vhd
+      - src/packages/can_constants_pkg.vhd
+      - src/packages/can_fd_frame_format.vhd
+      - src/packages/can_fd_register_map.vhd
+      - src/packages/can_types_pkg.vhd
+      - src/packages/drv_stat_pkg.vhd
+      - src/packages/id_transfer_pkg.vhd
+      - src/packages/unary_ops_pkg.vhd
+
+  - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      - src/prescaler/bit_segment_meter.vhd
+      - src/prescaler/bit_time_cfg_capture.vhd
+      - src/prescaler/bit_time_counters.vhd
+      - src/prescaler/bit_time_fsm.vhd
+      - src/prescaler/prescaler.vhd
+      - src/prescaler/segment_end_detector.vhd
+      - src/prescaler/synchronisation_checker.vhd
+      - src/prescaler/trigger_generator.vhd
+
+  - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      - src/rx_budffer/rx_buffer_fsm.vhd
+      - src/rx_budffer/rx_buffer_pointers.vhd
+      - src/rx_budffer/rx_buffer_ram.vhd
+      - src/rx_budffer/rx_buffer.vhd
+
+- target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      - src/tx_arbitrator/priority_decoder.vhd
+      - src/tx_arbitrator/tx_arbitrator_fsm.vhd
+      - src/tx_arbitrator/tx_arbitrator.vhd
+
+- target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
+    files:
+      - src/txt_buffer/txt_buffer_fsm.vhd
+      - src/txt_buffer/txt_buffer_ram.vhd
+      - src/txt_buffer/txt_buffer.vhd
