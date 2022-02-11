@@ -79,16 +79,16 @@ sources:
 
   - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
     files:
-      -src/memory_register/generated/access_signaler.vhd
-      -src/memory_register/generated/address_decoder.vhd
-      -src/memory_register/generated/can_registers_pkg.vhd
-      -src/memory_register/generated/cmn_reg_map_pkg.vhd
-      -src/memory_register/generated/control_registers_reg_map.vhd
-      -src/memory_register/generated/data_mux.vhd
-      -src/memory_register/generated/memory_bus.vhd
-      -src/memory_register/generated/memory_reg.vhd
-      -src/memory_register/generated/test_registers_reg_map.vhd
-      -src/memory_register/memory_registers.vhd
+      - src/memory_register/generated/access_signaler.vhd
+      - src/memory_register/generated/address_decoder.vhd
+      - src/memory_register/generated/can_registers_pkg.vhd
+      - src/memory_register/generated/cmn_reg_map_pkg.vhd
+      - src/memory_register/generated/control_registers_reg_map.vhd
+      - src/memory_register/generated/data_mux.vhd
+      - src/memory_register/generated/memory_bus.vhd
+      - src/memory_register/generated/memory_reg.vhd
+      - src/memory_register/generated/test_registers_reg_map.vhd
+      - src/memory_register/memory_registers.vhd
   
   - target: all(any(test, tech_cells_generic_include_tb_cells), not(tech_cells_generic_exclude_tb_cells))
     files:
