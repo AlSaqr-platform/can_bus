@@ -151,7 +151,7 @@ begin
     -- pointer is only incremented once.
     ---------------------------------------------------------------------------
     reg_rden_o <= '1' when (s_apb_psel = '1' and s_apb_pwrite = '0' and
-                            s_apb_penable = '0')
+                            s_apb_penable = '1')
                       else
                   '0';
 

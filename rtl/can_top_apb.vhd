@@ -95,7 +95,8 @@ entity can_top_apb is
         sup_filtC           : boolean                  := false;
         sup_range           : boolean                  := false;
         sup_traffic_ctrs    : boolean                  := false;
-        sup_test_registers  : boolean                  := false
+        sup_test_registers  : boolean                  := false;
+        target_technology   : natural range 0 to 1     := 1
     );
     port(
         aclk             : in  std_logic;
@@ -141,7 +142,8 @@ begin
             sup_filtB           => sup_filtB,
             sup_filtC           => sup_filtC,
             sup_range           => sup_range,
-            sup_traffic_ctrs    => sup_traffic_ctrs
+            sup_traffic_ctrs    => sup_traffic_ctrs,
+            target_technology   => target_technology
         )
         port map (
             clk_sys         => aclk,

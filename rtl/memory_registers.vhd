@@ -514,7 +514,7 @@ begin
     generic map(
         DATA_WIDTH            => 32,
         ADDRESS_WIDTH         => 16,
-        REGISTERED_READ       => true,
+        REGISTERED_READ       => false,
         CLEAR_READ_DATA       => false,
         RESET_POLARITY        => '0',
         SUP_FILT_A            => G_SUP_FILTA,

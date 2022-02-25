@@ -127,7 +127,7 @@ entity can_top_level is
         sup_traffic_ctrs    : boolean                := false;
         
         -- Target technology (ASIC or FPGA)
-        target_technology   : natural                := C_TECH_FPGA
+        target_technology   : natural range 0 to 1   := 1
     );
     port(
         -----------------------------------------------------------------------
