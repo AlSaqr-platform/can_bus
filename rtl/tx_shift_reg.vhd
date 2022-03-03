@@ -309,21 +309,6 @@ begin
     -- Assertions
     ---------------------------------------------------------------------------
     
-    /* Nonsense generate end generate instantiation
-
-    asrt_per_index_gen : for i in 0 to 31 generate 
-    
-    -- psl no_tx_undefined_data_asrt : assert never 
-    --  (tran_word_swapped(i) = 'U') @rising_edge(tx_load_data_word)
-    --  report "Data word for transmission shall not be undefined!";
-
-    -- Note: It is OK to clock it by tx_load_data_word to save simulation
-    --       performance!
-
-    end generate asrt_per_index_gen;
-
-    */
-
     -- psl default clock is rising_edge(clk_sys);
     
     -- psl no_sim_tx_shift_reg_load_1_asrt : assert never

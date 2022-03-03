@@ -1053,16 +1053,6 @@ begin
     -- transmitting overload frame! This-way we can be sure that no we can
     -- block unlock command in Protocol control FSM in overload frames!
      
-    /* Nonsense generate end generate instantiation
-    txtb_asr_gen : for i in 0 to txt_buffer_count - 1 generate
-    
-    -- psl no_tx_buf_transmitting_in_overload_asrt : assert never
-    --  (((txtb_state(i) = TXT_TRAN) or (txtb_state(i) = TXT_ABTP))) and
-    --   (is_overload = '1')
-    --   report "TXT Buffer should have been unlocked when node is in Overload frame!";
-    
-    end generate;
-    */
 
     -- Memory testability shall not be used when CTU CAN FD is enabled
     -- and operating!!
