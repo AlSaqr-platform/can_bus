@@ -159,7 +159,7 @@ begin
             swr             => reg_wren,
             sbe             => reg_be,
 
-            int             => irq,
+            int_o           => irq,
 
             CAN_tx          => CAN_tx,
             CAN_rx          => CAN_rx,

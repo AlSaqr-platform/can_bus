@@ -141,7 +141,7 @@ entity can_top_ahb is
         -----------------------------------------------------------------------
         -- Interrupt
         -----------------------------------------------------------------------
-        int              : out std_logic      
+        int_o            : out std_logic      
     );
 end entity can_top_ahb;
 
@@ -186,7 +186,7 @@ begin
         swr             => ctu_can_swr,
         sbe             => ctu_can_sbe,
 
-        int             => int,
+        int_o           => int_o,
 
         CAN_tx          => CAN_tx,
         CAN_rx          => CAN_rx,

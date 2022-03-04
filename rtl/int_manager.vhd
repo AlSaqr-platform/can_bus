@@ -157,7 +157,7 @@ entity int_manager is
         drv_bus          :in   std_logic_vector(1023 downto 0);
 
         -- Interrupt output
-        int              :out  std_logic; 
+        int_o            :out  std_logic; 
 
         -- Interrupt vector
         int_vector       :out  std_logic_vector(G_INT_COUNT - 1 downto 0);
@@ -290,7 +290,7 @@ begin
         clk                => clk_sys,      -- IN
         input              => int_i,        -- IN
 
-        output             => int           -- OUT
+        output             => int_o         -- OUT
     );
 
     -- <RELEASE_OFF>
