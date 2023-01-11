@@ -97,5 +97,4 @@ sources:
   - target: test
     files:
       - rtl/can_transciever.sv
-      - test/tb_can_vip/tb_can_vip.sv
-     # - rtl/can_apb_tb.vhd
+      - tb/tb_can_vip.sv

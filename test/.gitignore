@@ -1,8 +1,0 @@
-*.gcda
-*.gcno
-/build
-/code_html
-code_coverage.info
-/work
-test*.xml
-callgrind.out.*
