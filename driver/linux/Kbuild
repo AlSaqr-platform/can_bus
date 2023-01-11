@@ -1,8 +1,0 @@
-obj-m := ctucanfd.o
-ctucanfd-y := ctucanfd_base.o
-ifneq ($(CONFIG_PCI),)
-obj-m += ctucanfd_pci.o
-endif
-ifneq ($(CONFIG_OF),)
-obj-m += ctucanfd_platform.o
-endif
