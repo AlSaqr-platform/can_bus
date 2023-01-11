@@ -1,6 +1,0 @@
-#!/bin/bash
-
-IMG=registry.gitlab.com/canfd/server-tools/lyx
-d=$(realpath $(dirname "$0")/../..)
-
-docker run --rm -v $d:/build -w /build/modules/CTU_CAN_FD/doc/core -e HOME=/tmp -u $UID:$UID $IMG make clean all
