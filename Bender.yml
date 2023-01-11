@@ -94,3 +94,8 @@ sources:
       - rtl/can_top_level.vhd
       - rtl/can_top_apb.vhd
       - rtl/can_top_ahb.vhd
+  - target: test
+    files:
+      - rtl/can_transciever.sv
+      - test/tb_can_vip/tb_can_vip.sv
+     # - rtl/can_apb_tb.vhd
