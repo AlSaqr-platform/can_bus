@@ -12,3 +12,9 @@ debian/debhelper-build-stamp
 debian/*.debhelper
 debian/files
 venv/*
+Bender.lock
+bender
+sim/compile.tcl
+sim/modelsim.ini
+sim/transcript
+sim/work/
