@@ -86,8 +86,8 @@ module tb_can_vip ();
    axi_to_axi_lite_tx
      (
       .clk_i             ( clk                ), 
-      .rst_ni            ( rst                ),
-      .testmode_i        (1'b0                ),
+      .rst_ni            ( arstn              ),
+      .testmode_i        ( 1'b0               ),
      
       .slv               ( axi_master_tx      ),
       .mst               ( axi_lite_master_tx )
