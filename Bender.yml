@@ -104,3 +104,4 @@ sources:
     files:
       - rtl/can_transciever.sv
       - tb/tb_can_vip.sv
+      - tb/fixture_can.sv
